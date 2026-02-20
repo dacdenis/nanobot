@@ -61,13 +61,14 @@ VOLUME ["/data"]
 ENTRYPOINT ["/usr/local/bin/nanobot"]
 CMD ["run"]
 
+# Release image
+FROM runtime AS release
+
+COPY nanobot /usr/local/bin/nanobot
+
 # Dev image
 FROM runtime AS dev
 
 # Copy the binary from builder
 COPY --from=builder /build/nanobot /usr/local/bin/nanobot
 
-# Release image
-FROM runtime AS release
-
-COPY nanobot /usr/local/bin/nanobot
