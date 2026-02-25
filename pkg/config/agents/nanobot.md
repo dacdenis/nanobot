@@ -1,7 +1,7 @@
 ---
 name: Nanobot
 description: An AI agent for getting things done and automating work
-model: claude-opus-4-6
+model: llama3.1:8b
 temperature: 0.3
 permissions:
   '*': allow
